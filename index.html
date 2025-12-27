@@ -24,7 +24,7 @@
 
         <div class="right-info pill">
           <img src="assets/icon_phone_header.png" alt="Telefon" />
-          <a id="phoneTop" href="#">+358 41 499 3427</a>
+          <a id="phoneTop" href="#">+358 41 499 3477</a>
         </div>
       </div>
     </div>
@@ -39,12 +39,44 @@
 
         <div class="cta-row">
           <a class="btn btn-primary" href="#contactMessage">Kuvaile ongelmasi</a>
-          <a class="btn btn-light" id="callNowHero" href="#">Soita nyt +358 41 499 3427</a>
+          <a class="btn btn-light" id="callNowHero" href="#">Soita nyt +358 41 499 3477</a>
         </div>
       </div>
       <div></div>
     </div>
   </header>
+
+  <!-- Mobile services menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu__backdrop" data-close="1"></div>
+    <div class="mobile-menu__panel" role="dialog" aria-modal="true" aria-label="Menu">
+      <div class="mobile-menu__header">
+        <div class="mobile-menu__title">Palvelut</div>
+        <button class="mobile-menu__close" type="button" data-close="1" aria-label="Sulje">✕</button>
+      </div>
+      <div class="mobile-menu__list" id="mobileMenuList">
+        <button class="mobile-menu__item" type="button" data-service="Ajoneuvodiagnostiikka">Ajoneuvodiagnostiikka</button>
+        <button class="mobile-menu__item" type="button" data-service="Moottorin korjaus ja huolto">Moottorin korjaus ja huolto</button>
+        <button class="mobile-menu__item" type="button" data-service="Alusta ja iskunvaimentimet">Alusta ja iskunvaimentimet</button>
+        <button class="mobile-menu__item" type="button" data-service="Jarruhuolto ja -korjaus">Jarruhuolto ja -korjaus</button>
+        <button class="mobile-menu__item" type="button" data-service="Renkaiden vaihto ja huolto">Renkaiden vaihto ja huolto</button>
+        <button class="mobile-menu__item" type="button" data-service="Öljynvaihto">Öljynvaihto</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Call modal -->
+  <div class="call-modal" id="callModal" aria-hidden="true">
+    <div class="call-modal__backdrop" data-close-call="1"></div>
+    <div class="call-modal__panel" role="dialog" aria-modal="true" aria-label="Soita">
+      <div class="call-modal__title" id="callModalTitle">Soita</div>
+      <div class="call-modal__actions">
+        <a class="call-modal__btn" id="callNowBtn" href="tel:+358414993477">Soita nyt</a>
+        <button class="call-modal__close" type="button" data-close-call="1">Sulje</button>
+      </div>
+    </div>
+  </div>
+
 
   <section class="services-wrap">
     <div class="container section">
@@ -160,7 +192,7 @@
 
           <div class="info-line phone-line">
             <img src="assets/icon_phone_yht.png" alt="" />
-            <a id="phoneInfo" href="#">+358 41 499 3427</a>
+            <a id="phoneInfo" href="#">+358 41 499 3477</a>
           </div>
 
           <div class="info-line">
@@ -220,7 +252,7 @@
 
   <script>
     // Setările tale
-    const PHONE_DISPLAY = "+358 41 499 3427";
+    const PHONE_DISPLAY = "+358 41 499 3477";
     const PHONE_TEL = "+358414993427"; // fără spații
     const EMAIL = "ukrfinmotors@gmail.com";
     const ADDRESS = "Jarrutie 12, 00770 Helsinki";
@@ -282,5 +314,6 @@
       alert("Pagina 'Tietosuoja ja -turva' nu este încă scrisă. Dacă vrei, o fac.");
     });
   </script>
+  <script src="script.js"></script>
 </body>
 </html>

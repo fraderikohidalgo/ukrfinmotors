@@ -362,3 +362,476 @@ footer{
 /* v16 header phone icon */
 .right-info{gap:10px; align-items:center}
 .right-info img{width:18px;height:18px}
+
+/* v17 mobile hero */
+@media (max-width: 768px){
+  .hero{
+    min-height: 520px;
+    padding: 22px 0 26px;
+  }
+  .hero .content{
+    padding: 0 16px;
+  }
+  .hero h1{
+    font-size: 42px;
+    line-height: 1.05;
+  }
+  .hero p{
+    font-size: 16px;
+    margin-top: 10px;
+    max-width: 32ch;
+  }
+  .hero .actions{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .hero .btn-primary,
+  .hero .btn-secondary{
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* keep background looking good on mobile */
+  .hero::before{
+    background-position: 70% center;
+    filter: none;
+  }
+  /* slightly stronger overlay so text stays readable */
+  .hero::after{
+    opacity: 0.50;
+  }
+
+  /* top bar spacing so it doesn't push hero down too much */
+  .topbar{
+    padding: 10px 0 10px;
+  }
+  .brand img{top: 20px;}
+}
+@media (max-width: 420px){
+  .hero{
+    min-height: 480px;
+  }
+  .hero h1{
+    font-size: 36px;
+  }
+}
+
+/* v18 mobile layout */
+@media (max-width: 768px){
+
+  /* Header: only logo + phone */
+  .topbar{padding:10px 0;}
+  .center-info{display:none !important;}
+  .top-info{gap:0}
+  .right-info{
+    margin-left:auto;
+    font-size:16px;
+  }
+  .right-info a{font-size:16px;}
+  .brand img{height:64px; top:18px;}
+
+  /* Hero: show more right side of image, reduce height */
+  .hero{min-height:430px;}
+  .hero::before{background-position: 88% center;}
+  .hero h1{font-size:34px;}
+  .hero p{max-width:36ch;}
+
+  /* Palvelume: cards smaller, 1 column */
+  .services-grid{
+    grid-template-columns: 1fr !important;
+    gap:12px !important;
+  }
+  .card{
+    padding:12px 14px !important;
+    min-height:auto !important;
+  }
+  .card .icon img{width:54px;height:54px;}
+  .card h3{font-size:14px;margin:0 0 4px;}
+  .card p{font-size:12px;line-height:1.35;margin:0;}
+  .services .cta{margin-top:14px;}
+
+  /* Tietoa meistä: stack, image smaller */
+  .about .two-col{
+    grid-template-columns: 1fr !important;
+    gap:14px !important;
+  }
+  .about .visual{
+    min-height:260px !important;
+    height:260px !important;
+  }
+  .about .section-title{font-size:34px;}
+  .about p{font-size:14px; line-height:1.45;}
+
+  /* Contact + map: stack, prevent cut */
+  .contact .two-col{
+    grid-template-columns: 1fr !important;
+    gap:14px !important;
+  }
+  .map-embed iframe{
+    height:260px !important;
+  }
+  .panel{padding:14px !important;}
+  .form-row{grid-template-columns: 1fr !important; gap:10px !important;}
+  .submit{width:100%;}
+
+  /* Footer: smaller social icons */
+  .footer .social img{width:18px;height:18px;}
+  .footer .social{gap:14px;}
+}
+@media (max-width: 420px){
+  .brand img{height:58px; top:16px;}
+  .right-info a{font-size:15px;}
+  .hero::before{background-position: 92% center;}
+  .hero{min-height:400px;}
+}
+
+/* v19 mobile tune */
+.menu-btn{
+  display:none;
+  background:transparent;
+  border:0;
+  padding:10px;
+  border-radius:8px;
+}
+.menu-btn span{
+  display:block;
+  width:22px;
+  height:2px;
+  background:#0a2a4a;
+  margin:4px 0;
+  border-radius:2px;
+}
+
+@media (max-width: 768px){
+  /* Header like screenshot: hamburger + phone only */
+  .menu-btn{display:inline-flex; flex-direction:column; justify-content:center;}
+  .brand{display:none;}
+  .topbar .inner{position:relative; padding:0 10px;}
+  .right-info{margin-left:auto; padding-right:6px;}
+  .right-info img{width:18px;height:18px}
+  .right-info a{font-size:16px;font-weight:800}
+
+  /* Hero closer to screenshot */
+  .hero{min-height:520px; padding:14px 0 18px;}
+  .hero .content{padding:0 14px;}
+  .hero::before{background-position: 92% center;}
+  .hero::after{opacity:0.40;}
+  .hero h1{font-size:40px; line-height:1.02; letter-spacing:0.2px;}
+  .hero p{font-size:16px; max-width:28ch;}
+  .hero .actions{width:100%; align-items:stretch;}
+  .hero .btn-primary,.hero .btn-secondary{width:100%;}
+
+  /* Center section titles and CTAs on mobile */
+  .services h2, .about h2, .contact h2{ text-align:center; }
+  .services .cta, .about .btn-pill{ display:flex; justify-content:center; }
+
+  /* Palvelume section aligned center */
+  .services-grid{justify-items:center;}
+  .card{width:100%;}
+
+  /* Tietoa meistä: center text + smaller image */
+  .about .about-left{align-items:center; text-align:center;}
+  .about .visual{height:220px !important; min-height:220px !important; background-position: 70% center;}
+  .about p{max-width:44ch; margin-left:auto; margin-right:auto;}
+
+  /* Contact form centered */
+  .panel .title{ text-align:center; }
+
+  /* Footer: slightly smaller social icons */
+  .footer .social img{width:16px;height:16px;}
+}
+
+/* very small screens */
+@media (max-width: 420px){
+  .hero h1{font-size:36px;}
+  .hero::before{background-position: 95% center;}
+}
+
+/* v20 mobile menu + mobile hero match */
+.mobile-menu, .call-modal{display:none;}
+.mobile-menu[aria-hidden="false"], .call-modal[aria-hidden="false"]{display:block;}
+.mobile-menu__backdrop, .call-modal__backdrop{
+  position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:999;
+}
+.mobile-menu__panel{
+  position:fixed; top:0; left:0; right:0;
+  background:#fff;
+  border-bottom-left-radius:14px;
+  border-bottom-right-radius:14px;
+  z-index:1000;
+  padding:14px 14px 12px;
+  box-shadow:0 12px 30px rgba(0,0,0,.25);
+}
+.mobile-menu__header{
+  display:flex; align-items:center; justify-content:space-between;
+  padding-bottom:10px; border-bottom:1px solid #e7eefb;
+}
+.mobile-menu__title{font-weight:900; font-size:18px; color:#0a2a4a;}
+.mobile-menu__close{
+  background:#f1f6ff; border:0; border-radius:10px; padding:8px 10px; font-weight:900; color:#0a2a4a;
+}
+.mobile-menu__list{padding-top:10px; display:flex; flex-direction:column; gap:8px;}
+.mobile-menu__item{
+  text-align:left;
+  background:#f3f8ff;
+  border:1px solid #d7e6ff;
+  border-radius:12px;
+  padding:12px 12px;
+  font-weight:800;
+  color:#0a2a4a;
+}
+.mobile-menu__item:active{transform:scale(.99);}
+
+.call-modal__panel{
+  position:fixed; left:50%; top:50%; transform:translate(-50%,-50%);
+  width:min(92vw, 380px);
+  background:#fff;
+  border-radius:16px;
+  z-index:1000;
+  box-shadow:0 16px 40px rgba(0,0,0,.30);
+  padding:16px;
+}
+.call-modal__title{font-size:18px; font-weight:900; color:#0a2a4a; margin-bottom:12px;}
+.call-modal__actions{display:flex; gap:10px; flex-direction:column;}
+.call-modal__btn{
+  display:flex; justify-content:center; align-items:center;
+  background:#1e63d6; color:#fff; text-decoration:none;
+  border-radius:12px; padding:12px 14px; font-weight:900;
+}
+.call-modal__close{
+  background:#eef4ff; border:0; border-radius:12px; padding:12px 14px; font-weight:900; color:#0a2a4a;
+}
+
+/* Mobile layout adjustments to match your screenshot */
+@media (max-width: 768px){
+  /* Header: only menu + phone (like design) */
+  .brand, .center-info{display:none !important;}
+  .topbar{padding:8px 0; background:#fff; box-shadow:0 6px 18px rgba(0,0,0,.08);}
+  .topbar .inner{padding:0 10px;}
+  .menu-btn{display:inline-flex !important;}
+  .right-info{margin-left:auto; gap:10px; padding-right:6px;}
+  .right-info img{width:20px;height:20px}
+  .right-info a{font-size:16px; font-weight:900;}
+
+  /* Hero: smaller image scale, show right side more */
+  .hero{min-height:520px; padding:16px 0 18px;}
+  .hero::before{
+    background-position: 90% center;
+    background-size: cover;
+  }
+  .hero::after{opacity:.38;}
+  .hero h1{font-size:40px; line-height:1.02;}
+  .hero p{font-size:16px; max-width:30ch;}
+  .hero .actions{width:100%; align-items:stretch;}
+  .hero .btn-primary,.hero .btn-secondary{width:100%;}
+
+  /* Palvelume title centered */
+  .services .section-title{text-align:center;}
+
+  /* More compact service cards */
+  .services-grid{grid-template-columns:1fr !important; gap:12px !important;}
+  .card{padding:12px 14px !important;}
+  .card .icon{display:flex; align-items:center; justify-content:center;}
+  .card .icon img{width:56px;height:56px;}
+
+  /* About button under image centered */
+  .about .two-col{grid-template-columns:1fr !important; gap:14px !important;}
+  .about .about-left{align-items:flex-start; text-align:left;}
+  .about .visual{height:220px !important; min-height:220px !important;}
+  .about-mobile-btn{display:flex; justify-content:center; padding-top:10px;}
+  .about-mobile-btn .btn-pill{margin:0;}
+
+  /* Footer social smaller */
+  .footer .social img{width:14px;height:14px;}
+}
+@media (max-width: 420px){
+  .hero::before{background-position: 94% center;}
+  .hero h1{font-size:36px;}
+}
+
+/* v21 hero mobile exact */
+@media (max-width: 768px){
+  /* compact hero like your screenshot */
+  .hero{
+    min-height: 320px !important;
+    padding: 12px 0 14px !important;
+  }
+  .hero .content{
+    padding: 0 14px !important;
+  }
+  .hero::before{
+    background-position: 92% center !important;
+  }
+  .hero h1{
+    font-size: 28px !important;
+    line-height: 1.08 !important;
+    max-width: 22ch !important;
+  }
+  .hero p{
+    font-size: 12px !important;
+    margin-top: 8px !important;
+    max-width: 36ch !important;
+  }
+
+  /* buttons: like screenshot (small pill, not full width) */
+  .hero .actions{
+    margin-top: 12px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+  .hero .btn-primary{
+    display:none !important; /* screenshot shows only call button */
+  }
+  .hero .btn-secondary{
+    width: auto !important;
+    padding: 10px 14px !important;
+    border-radius: 10px !important;
+    background: rgba(255,255,255,.85) !important;
+    color:#0a2a4a !important;
+    border:1px solid rgba(255,255,255,.85) !important;
+    box-shadow: 0 6px 14px rgba(0,0,0,.16) !important;
+  }
+}
+@media (max-width: 420px){
+  .hero{min-height: 300px !important;}
+  .hero h1{font-size: 26px !important;}
+}
+
+/* v22 mobile header bar + alignment */
+.mobile-topbar{display:none;}
+@media (max-width:768px){
+  .mobile-topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 12px;
+    background:#fff;
+    border-bottom:1px solid rgba(0,0,0,.06);
+  }
+  .mobile-logo{
+    height:42px;
+    width:auto;
+  }
+  .mobile-phone{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    color:#0a2a4a;
+    font-weight:900;
+    font-size:16px;
+  }
+  .mobile-phone img{width:20px;height:20px;}
+  /* hide the old topbar row on mobile so only logo+phone remain */
+  .topbar .inner{display:none !important;}
+
+  /* Hero button lower (below car) */
+  .hero .actions{margin-top: 150px !important;}
+
+  /* Center titles */
+  .services .section-title,
+  .about .section-title{ text-align:center !important; }
+  .services .section-title{margin-left:auto;margin-right:auto;}
+
+  /* Center about section content */
+  .about .about-left{align-items:center !important; text-align:center !important;}
+  .about p{margin-left:auto;margin-right:auto;}
+  .about-mobile-btn{justify-content:center !important;}
+}
+@media (max-width:420px){
+  .hero .actions{margin-top: 135px !important;}
+  .mobile-logo{height:38px;}
+}
+
+/* v23 responsive iphone15 (and close sizes) */
+@media (max-width: 768px){
+  /* Remove pixel-push and use adaptive spacing */
+  .hero{
+    min-height: clamp(340px, 46vh, 420px) !important;
+    padding: 16px 0 18px !important;
+  }
+  .hero .content{
+    padding: 0 14px !important;
+    max-width: 520px;
+  }
+  .hero::before{
+    background-position: 92% center !important;
+  }
+  /* keep overlay readable */
+  .hero::after{opacity:.38 !important;}
+
+  /* Title sizes scale */
+  .hero h1{
+    font-size: clamp(26px, 7.2vw, 34px) !important;
+    line-height: 1.05 !important;
+    max-width: 22ch !important;
+  }
+  .hero p{
+    font-size: clamp(12px, 3.6vw, 15px) !important;
+    max-width: 36ch !important;
+  }
+
+  /* Place call button lower without fixed px */
+  .hero .actions{
+    margin-top: clamp(90px, 18vh, 160px) !important;
+    width: 100% !important;
+    align-items: flex-start !important;
+  }
+
+  /* About and services centering kept */
+  .services .section-title{text-align:center !important;}
+  .about .section-title{text-align:center !important;}
+  .about .about-left{align-items:center !important; text-align:center !important;}
+  .about-mobile-btn{display:flex; justify-content:center !important;}
+  .about .visual{
+    height: clamp(190px, 26vh, 240px) !important;
+    min-height: clamp(190px, 26vh, 240px) !important;
+  }
+
+  /* Footer icons slightly smaller */
+  .footer .social img{width:14px;height:14px;}
+}
+
+/* iPhone 15 specific fine-tune (393px wide) */
+@media (max-width: 430px){
+  .hero::before{background-position: 93% center !important;}
+  .hero .actions{margin-top: clamp(95px, 20vh, 165px) !important;}
+}
+
+/* v24 iphone15 topbar + hero */
+@media (max-width: 768px){
+  /* Ensure mobile topbar visible and compact */
+  .mobile-topbar{
+    display:flex !important;
+    position:sticky;
+    top:0;
+    z-index:1200;
+  }
+  /* Hide hamburger/menu row entirely */
+  .menu-btn{display:none !important;}
+  .topbar .inner{display:none !important;}
+
+  /* Remove the blank white block above hero (if any margin) */
+  .hero{margin-top:0 !important;}
+
+  /* Move call button below car more */
+  .hero .actions{
+    margin-top: clamp(140px, 26vh, 220px) !important;
+  }
+
+  /* Center Palvelume title */
+  .services .section-title{
+    text-align:center !important;
+    width:100%;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+}
+@media (max-width: 430px){
+  .hero .actions{
+    margin-top: clamp(150px, 28vh, 235px) !important;
+  }
+}
