@@ -998,3 +998,220 @@ footer{
     margin-top:0 !important;
   }
 }
+
+/* v28 mobile figma hero 393 (iPhone 15 width) */
+@media (max-width: 768px){
+  /* Header like PNG: white bar, subtle shadow, hamburger left, phone right */
+  .m-header{
+    height:52px !important;
+    padding:0 14px !important;
+    box-shadow:0 8px 22px rgba(0,0,0,.14) !important;
+  }
+  .m-menu-btn{
+    width:40px !important;
+    height:40px !important;
+    gap:5px !important;
+  }
+  .m-menu-btn span{width:20px !important;}
+  .m-phone{
+    font-size:18px !important;
+    font-weight:900 !important;
+    gap:12px !important;
+  }
+  .m-phone img{width:22px !important;height:22px !important;}
+
+  /* Hero height and crop like PNG */
+  .hero{
+    min-height: 215px !important;
+  }
+  .hero::before{
+    background-position: 86% center !important; /* show car more */
+    background-size: cover !important;
+  }
+  /* Text placement like PNG */
+  .hero .content{
+    padding: 18px 14px 14px !important;
+  }
+  .hero h1{
+    font-size: 26px !important;
+    line-height: 1.06 !important;
+    letter-spacing: .2px !important;
+    max-width: 18ch !important;
+    margin-bottom: 10px !important;
+  }
+  .hero p{
+    font-size: 12px !important;
+    font-weight:600 !important;
+    margin-top: 0 !important;
+    margin-bottom: 10px !important;
+    max-width: 34ch !important;
+  }
+
+  /* Only the call pill button, positioned like PNG */
+  .hero .btn-primary{display:none !important;}
+  .hero .actions{
+    margin-top: 0 !important;
+    padding-top: 8px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+  .hero .btn-secondary{
+    padding: 8px 12px !important;
+    border-radius: 10px !important;
+    font-size: 12px !important;
+    font-weight: 900 !important;
+    background: rgba(255,255,255,.88) !important;
+    border: 1px solid rgba(255,255,255,.88) !important;
+    color:#0a2a4a !important;
+    box-shadow: 0 10px 20px rgba(0,0,0,.18) !important;
+  }
+
+  /* Section title Palvelume centered as PNG */
+  .services .section-title{
+    text-align:center !important;
+    font-size: 18px !important;
+    margin: 18px auto 12px !important;
+  }
+}
+
+/* Fine tune for 393px (iPhone 15) */
+@media (max-width: 430px){
+  .hero::before{background-position: 88% center !important;}
+}
+
+/* v29 fix mobile white gap + move call button lower */
+@media (max-width:768px){
+  /* remove any gap between header and hero */
+  .m-header{margin-bottom:0 !important;}
+  .hero{margin-top:0 !important; padding-top:0 !important;}
+
+  /* force hero to start immediately */
+  header + .hero{margin-top:0 !important;}
+
+  /* move call button lower like Figma */
+  .hero .actions{
+    margin-top:28px !important;
+  }
+  .hero .btn-secondary{
+    margin-top:18px !important;
+  }
+}
+
+/* v31 use existing mobile gap for working hours */
+@media (max-width:768px){
+  .m-hours{
+    height:100%;
+    text-align:center;
+    font-weight:900;
+    font-size:13px;
+    color:#0a2a4a;
+    padding:6px 0;
+    background:#fff;
+  }
+}
+
+/* v32 mobile hero 1:1 per screenshot (minimal text + call pill left) */
+@media (max-width:768px){
+  /* Hero frame like screenshot */
+  .hero{
+    min-height: 240px !important;
+    padding: 0 !important;
+  }
+  .hero::after{opacity:.18 !important;} /* lighter dark overlay */
+  .hero::before{
+    background-position: 74% center !important; /* keep car visible */
+    background-size: cover !important;
+  }
+
+  /* Hide big title on mobile hero */
+  .hero h1{display:none !important;}
+
+  /* Place subtitle and call button like screenshot */
+  .hero .content{
+    position:relative !important;
+    padding: 18px 14px 16px !important;
+    min-height: 240px !important;
+  }
+  .hero p{
+    position:absolute !important;
+    left:14px !important;
+    top:96px !important;
+    margin:0 !important;
+    font-size:12px !important;
+    font-weight:600 !important;
+    color: rgba(255,255,255,.80) !important;
+    max-width: 28ch !important;
+  }
+  .hero .actions{
+    position:absolute !important;
+    left:14px !important;
+    bottom:18px !important;
+    margin:0 !important;
+    padding:0 !important;
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    gap:0 !important;
+  }
+  .hero .btn-primary{display:none !important;}
+  .hero .btn-secondary{
+    width:auto !important;
+    padding:8px 12px !important;
+    border-radius:12px !important;
+    font-size:12px !important;
+    font-weight:900 !important;
+    background:rgba(255,255,255,.90) !important;
+    border:1px solid rgba(255,255,255,.90) !important;
+    color:#0a2a4a !important;
+    box-shadow: 0 10px 18px rgba(0,0,0,.18) !important;
+  }
+}
+
+/* Fine tuning for ~393px width */
+@media (max-width:430px){
+  .hero p{top:92px !important;}
+  .hero::before{background-position: 76% center !important;}
+}
+
+/* v33 mobile hero EXACT like reference screenshot */
+@media (max-width:768px){
+  .hero{
+    min-height: 260px !important;
+  }
+  .hero::before{
+    background-position: 70% center !important;
+  }
+  .hero::after{
+    opacity:.15 !important;
+  }
+
+  .hero .content{
+    padding:0 !important;
+  }
+
+  /* Subtitle text exactly mid-left */
+  .hero p{
+    position:absolute !important;
+    left:16px !important;
+    top:110px !important;
+    font-size:13px !important;
+    font-weight:600 !important;
+    color:rgba(255,255,255,.75) !important;
+    max-width:30ch !important;
+  }
+
+  /* Call button exactly under subtitle */
+  .hero .actions{
+    position:absolute !important;
+    left:16px !important;
+    top:150px !important;
+    bottom:auto !important;
+  }
+
+  .hero .btn-secondary{
+    padding:8px 14px !important;
+    border-radius:12px !important;
+    font-size:13px !important;
+    font-weight:900 !important;
+  }
+}
