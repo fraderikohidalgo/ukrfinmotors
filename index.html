@@ -10,6 +10,31 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+  <!-- Mobile header (hamburger + phone) -->
+  <div class="m-header" id="mHeader">
+    <button class="m-menu-btn" type="button" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <a class="m-phone" href="tel:+358414993477">
+      <img src="assets/icon_phone_header.png" alt="Telefon" />
+      <span>+358 41 499 3477</span>
+    </a>
+  </div>
+
+  <!-- Mobile menu dropdown -->
+  <div class="m-menu" id="mMenu" aria-hidden="true">
+    <div class="m-menu__panel">
+      <div class="m-menu__title">Palvelume</div>
+      <a class="m-menu__item" href="tel:+358414993477" data-close="1">Ajoneuvodiagnostiikka</a>
+      <a class="m-menu__item" href="tel:+358414993477" data-close="1">Moottorin korjaus ja huolto</a>
+      <a class="m-menu__item" href="tel:+358414993477" data-close="1">Jarruhuolto ja -korjaus</a>
+      <a class="m-menu__item" href="tel:+358414993477" data-close="1">Alusta ja iskunvaimentimet</a>
+      <a class="m-menu__item" href="tel:+358414993477" data-close="1">Renkaiden vaihto ja huolto</a>
+      <a class="m-menu__item" href="tel:+358414993477" data-close="1">Öljynvaihto</a>
+    </div>
+  </div>
+
   <div class="topbar">
     <div class="container inner">
       <a class="brand" href="#">

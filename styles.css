@@ -835,3 +835,166 @@ footer{
     margin-top: clamp(150px, 28vh, 235px) !important;
   }
 }
+
+/* v25 mobile figma menu (hamburger + phone + dropdown services) */
+.m-header, .m-menu{display:none;}
+.m-header{
+  position:sticky;
+  top:0;
+  z-index:2000;
+  background:#fff;
+  height:46px;
+  display:none;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 12px;
+  box-shadow:0 6px 18px rgba(0,0,0,.10);
+}
+.m-menu-btn{
+  width:40px; height:36px;
+  background:transparent;
+  border:0;
+  border-radius:10px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+}
+.m-menu-btn span{
+  width:18px; height:2px;
+  background:#0a2a4a;
+  border-radius:2px;
+}
+.m-phone{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  color:#0a2a4a;
+  font-weight:900;
+  font-size:16px;
+}
+.m-phone img{width:20px;height:20px;}
+
+.m-menu{
+  position:fixed;
+  top:46px;
+  left:10px;
+  z-index:1999;
+}
+.m-menu[aria-hidden="false"]{display:block;}
+.m-menu__panel{
+  width:min(330px, calc(100vw - 20px));
+  background:#fff;
+  border:1px solid rgba(10,42,74,.18);
+  border-radius:10px;
+  box-shadow:0 16px 40px rgba(0,0,0,.22);
+  padding:10px 10px 12px;
+}
+.m-menu__title{
+  font-weight:900;
+  color:#0a2a4a;
+  font-size:13px;
+  margin:2px 4px 8px;
+}
+.m-menu__item{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:7px 8px;
+  border-radius:8px;
+  color:#0a2a4a;
+  text-decoration:none;
+  font-weight:800;
+  font-size:12.5px;
+}
+.m-menu__item::before{
+  content:"▶";
+  font-size:10px;
+  opacity:.7;
+}
+.m-menu__item:hover{background:#f3f8ff;}
+.m-menu__item:active{transform:scale(.995);}
+
+@media (max-width:768px){
+  .m-header{display:flex;}
+  header.topbar{display:none !important;}
+  .mobile-topbar{display:none !important;}
+
+  .hero{
+    min-height: 260px !important;
+    padding: 0 !important;
+  }
+  .hero .content{
+    padding: 16px 14px 14px !important;
+  }
+  .hero::before{
+    background-position: 92% center !important;
+  }
+  .hero::after{opacity:.40 !important;}
+  .hero h1{
+    font-size: 26px !important;
+    line-height: 1.08 !important;
+    max-width: 22ch !important;
+  }
+  .hero p{
+    font-size: 12px !important;
+    max-width: 38ch !important;
+  }
+  .hero .actions{
+    margin-top: clamp(90px, 18vh, 135px) !important;
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    gap:10px !important;
+  }
+  .hero .btn-primary{display:none !important;}
+  .hero .btn-secondary{
+    width:auto !important;
+    padding:8px 12px !important;
+    border-radius:10px !important;
+    background:rgba(255,255,255,.88) !important;
+    border:1px solid rgba(255,255,255,.88) !important;
+    color:#0a2a4a !important;
+    font-weight:900 !important;
+  }
+
+  .services .section-title{
+    text-align:center !important;
+    width:100%;
+    margin:18px auto 12px !important;
+  }
+
+  .services-grid{grid-template-columns:1fr !important; gap:10px !important;}
+  .card{padding:12px 14px !important; border-radius:12px !important;}
+  .card .icon img{width:54px;height:54px;}
+
+  .about .two-col{grid-template-columns:1fr !important;}
+  .about-mobile-btn{display:flex; justify-content:center; padding-top:12px;}
+  .about .visual{height:220px !important; min-height:220px !important;}
+
+  .footer .social img{width:16px;height:16px;}
+}
+
+/* v27 remove mobile gap: hero starts immediately under mobile bar */
+@media (max-width:768px){
+  /* Make sure the mobile header doesn't reserve extra whitespace */
+  .m-header{
+    position:relative !important;
+    margin:0 !important;
+  }
+  /* Remove any top spacing on the hero */
+  .hero{
+    margin-top:0 !important;
+    padding-top:0 !important;
+  }
+  /* Also remove any global top padding that could create a white band */
+  body{
+    margin:0 !important;
+    padding-top:0 !important;
+  }
+  main{
+    padding-top:0 !important;
+    margin-top:0 !important;
+  }
+}

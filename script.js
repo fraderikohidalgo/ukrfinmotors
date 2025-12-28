@@ -1,63 +1,41 @@
 
 (function(){
-  const PHONE = "+358 41 499 3477";
-  const TEL = "tel:+358414993477";
-
-  const menuBtn = document.querySelector(".menu-btn");
-  const mobileMenu = document.getElementById("mobileMenu");
-  const callModal = document.getElementById("callModal");
-  const callTitle = document.getElementById("callModalTitle");
-  const callNowBtn = document.getElementById("callNowBtn");
+  const btn = document.querySelector('.m-menu-btn');
+  const menu = document.getElementById('mMenu');
 
   function openMenu(){
-    if(!mobileMenu) return;
-    mobileMenu.setAttribute("aria-hidden","false");
-    document.body.style.overflow="hidden";
+    if(!menu || !btn) return;
+    menu.setAttribute('aria-hidden','false');
+    btn.setAttribute('aria-expanded','true');
   }
   function closeMenu(){
-    if(!mobileMenu) return;
-    mobileMenu.setAttribute("aria-hidden","true");
-    document.body.style.overflow="";
+    if(!menu || !btn) return;
+    menu.setAttribute('aria-hidden','true');
+    btn.setAttribute('aria-expanded','false');
   }
-  function openCall(serviceName){
-    if(!callModal) return;
-    callTitle.textContent = serviceName ? (serviceName + " – soita") : "Soita";
-    callNowBtn.setAttribute("href", TEL);
-    callModal.setAttribute("aria-hidden","false");
-    document.body.style.overflow="hidden";
-  }
-  function closeCall(){
-    if(!callModal) return;
-    callModal.setAttribute("aria-hidden","true");
-    document.body.style.overflow="";
+  function toggleMenu(){
+    if(!menu) return;
+    const open = menu.getAttribute('aria-hidden') === 'false';
+    open ? closeMenu() : openMenu();
   }
 
-  if(menuBtn){
-    menuBtn.addEventListener("click", openMenu);
+  if(btn){
+    btn.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      toggleMenu();
+    });
   }
-  if(mobileMenu){
-    mobileMenu.addEventListener("click", (e)=>{
+
+  if(menu){
+    menu.addEventListener('click', (e)=>{
       const t = e.target;
-      if(t && t.dataset && t.dataset.close){ closeMenu(); }
-      if(t && t.classList && t.classList.contains("mobile-menu__item")){
-        const name = t.getAttribute("data-service") || "Soita";
+      if(t && t.dataset && t.dataset.close){
         closeMenu();
-        openCall(name);
       }
-    });
-  }
-  if(callModal){
-    callModal.addEventListener("click", (e)=>{
-      const t = e.target;
-      if(t && t.dataset && t.dataset.closeCall){ closeCall(); }
+      e.stopPropagation();
     });
   }
 
-  // ESC closes dialogs
-  document.addEventListener("keydown", (e)=>{
-    if(e.key === "Escape"){
-      closeMenu();
-      closeCall();
-    }
-  });
+  document.addEventListener('click', ()=>closeMenu());
+  document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeMenu(); });
 })();
